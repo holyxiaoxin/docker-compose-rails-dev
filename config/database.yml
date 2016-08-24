@@ -1,0 +1,30 @@
+# default: &default
+#   adapter: postgresql
+#   encoding: utf8
+#   pool: 5
+#   timeout: 5000
+#
+# development:
+#   <<: *default
+#   database: docker-rails-dev
+#
+# test:
+#   <<: *default
+#   database: docker-rails-test
+#
+# production:
+#   <<: *default
+#   database: docker-rails-production
+
+development: &default
+  adapter: postgresql
+  encoding: unicode
+  database: postgres
+  pool: 5
+  username: postgres
+  password:
+  host: db
+
+test:
+  <<: *default
+  database: myapp_test
